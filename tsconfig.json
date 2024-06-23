@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "types": ["node"],
+    "lib": ["ES2020", "dom"]
+  },
+  "include": ["**/*.ts"]
+}
