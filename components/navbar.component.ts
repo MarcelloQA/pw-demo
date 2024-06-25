@@ -1,7 +1,8 @@
 import { Locator, Page, expect } from '@playwright/test';
+import { Category } from 'interfaces/category';
+import { BasePage } from 'pages/base.abstract';
 
-export class Navbar {
-  readonly page: Page;
+export class Navbar extends BasePage {
   readonly whatsNewButton: Locator;
   readonly womenCategoryButton: Locator;
   readonly menCategoryButton: Locator;
@@ -9,12 +10,10 @@ export class Navbar {
   readonly trainingCategoryButton: Locator;
   readonly saleCategoryButton: Locator;
   readonly storeSearchInput: Locator;
-  readonly storeCartButton: Locator;
-  readonly searchSingleResult: Locator;
-  readonly addToCartButton: Locator;
+  readonly productCategoryFromList: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
     this.whatsNewButton = page.getByRole('menuitem', { name: "What's New" });
     this.womenCategoryButton = page.getByRole('menuitem', { name: 'Women' });
     this.menCategoryButton = page.getByRole('menuitem', { name: 'Men' });
@@ -22,28 +21,24 @@ export class Navbar {
     this.trainingCategoryButton = page.getByRole('menuitem', { name: 'Training' });
     this.saleCategoryButton = page.getByRole('menuitem', { name: 'Sale' });
     this.storeSearchInput = page.getByPlaceholder('Search entire store');
-    this.storeCartButton = page.getByRole('link', { name: 'My Cart' });
-    this.searchSingleResult = page.getByRole('listitem');
-    this.addToCartButton = page.getByRole('button', { name: 'Add to Cart' });
+    this.productCategoryFromList = page.getByRole('menuitem');
   }
 
   async clickNavButton(locator: Locator) {
     await locator.click();
   }
 
+  async hoverOverNavButton(locator: Locator) {
+    await locator.hover();
+  }
+
+  async clickCategoryFromList(productCategory: Category) {
+    await expect(this.productCategoryFromList.filter({ hasText: productCategory.name })).toBeVisible();
+    await this.productCategoryFromList.filter({ hasText: productCategory.name }).click();
+  }
+
   async searchForProduct(productName: string) {
     await this.storeSearchInput.fill(productName);
     await this.storeSearchInput.press('Enter');
-  }
-
-  async verifySearchedProductsNames(productName: string) {
-    const item = this.searchSingleResult.filter({ hasText: productName }).filter({ has: this.addToCartButton });
-
-    const count = await item.count();
-    for (let i = 0; i < count; ++i) {
-      const results = item.nth(i);
-      await expect(results).toContainText(productName);
-    }
-    expect(count).toBeGreaterThan(0);
   }
 }

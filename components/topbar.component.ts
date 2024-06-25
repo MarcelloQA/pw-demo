@@ -1,7 +1,7 @@
 import { Locator, Page, expect } from '@playwright/test';
+import { BasePage } from 'pages/base.abstract';
 
-export class Topbar {
-  readonly page: Page;
+export class Topbar extends BasePage {
   readonly loginLink: Locator;
   readonly registerLink: Locator;
   readonly supportLink: Locator;
@@ -11,7 +11,7 @@ export class Topbar {
   readonly welcomeBanner: Locator;
 
   constructor(page: Page) {
-    this.page = page;
+    super(page);
     this.loginLink = page.getByRole('banner').getByText('Sign In');
     this.registerLink = page.getByRole('banner').getByText('Create An Account');
     this.supportLink = page.getByRole('banner').getByText('Support This Project');

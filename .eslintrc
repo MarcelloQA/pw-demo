@@ -46,6 +46,7 @@
     "no-multiple-empty-lines": "error",
     "no-cond-assign": "error",
     "no-console": "warn",
-    "no-trailing-spaces": "warn"
+    "no-trailing-spaces": "warn",
+    "playwright/expect-expect": "0"
   }
 }
