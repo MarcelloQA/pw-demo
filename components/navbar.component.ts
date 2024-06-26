@@ -9,7 +9,6 @@ export class Navbar extends BasePage {
   readonly gearCategoryButton: Locator;
   readonly trainingCategoryButton: Locator;
   readonly saleCategoryButton: Locator;
-  readonly storeSearchInput: Locator;
   readonly productCategoryFromList: Locator;
 
   constructor(page: Page) {
@@ -20,7 +19,6 @@ export class Navbar extends BasePage {
     this.gearCategoryButton = page.getByRole('menuitem', { name: 'Gear' });
     this.trainingCategoryButton = page.getByRole('menuitem', { name: 'Training' });
     this.saleCategoryButton = page.getByRole('menuitem', { name: 'Sale' });
-    this.storeSearchInput = page.getByPlaceholder('Search entire store');
     this.productCategoryFromList = page.getByRole('menuitem');
   }
 
@@ -35,10 +33,5 @@ export class Navbar extends BasePage {
   async clickCategoryFromList(productCategory: Category) {
     await expect(this.productCategoryFromList.filter({ hasText: productCategory.name })).toBeVisible();
     await this.productCategoryFromList.filter({ hasText: productCategory.name }).click();
-  }
-
-  async searchForProduct(productName: string) {
-    await this.storeSearchInput.fill(productName);
-    await this.storeSearchInput.press('Enter');
   }
 }

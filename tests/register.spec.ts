@@ -2,8 +2,8 @@ import { test } from 'fixtures/fixtures';
 import { user } from 'data/users';
 
 test.describe('Register page test', () => {
-  test.beforeEach(async ({ topbar }) => {
-    await topbar.goToBaseUrl();
+  test.beforeEach(async ({ navbar }) => {
+    await navbar.goToBaseUrl();
   });
 
   test('should verify that user can register with valid credentials', async ({ registerPage, topbar }) => {

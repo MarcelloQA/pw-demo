@@ -38,4 +38,13 @@ export class ProductCategoryPage extends BasePage {
       await this.addSingleProductToCart(product);
     }
   }
+
+  async enterProductDetails(name: string) {
+    await this.productItem.filter({ hasText: name }).click();
+  }
+
+  async clickAddToCartButton() {
+    await this.addToCartButton.click();
+    await expect.soft(this.addedToCartSuccessMessage).toBeVisible();
+  }
 }

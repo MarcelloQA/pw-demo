@@ -9,12 +9,12 @@ export const user: {
   validUser: {
     email: process.env.TEST_VALID_USER_EMAIL!,
     password: process.env.TEST_VALID_PASSWORD!,
-    firstName: 'Test-PW',
-    lastName: 'Playwright',
+    firstName: 'PlaywrightDemo',
+    lastName: 'TestRun',
   },
   registerInvalidUser: {
     email: faker.internet.email({
-      provider: 'coffeedemo123.com',
+      provider: 'coffeedemo1234.test',
     }),
     password: faker.internet.password({ length: 7 }),
     firstName: faker.person.firstName(),
@@ -22,7 +22,7 @@ export const user: {
   },
   registerValidUser: {
     email: faker.internet.email({
-      provider: 'coffeedemo123.com',
+      provider: 'coffeedemo1234.test',
     }),
     password: faker.internet.password({ length: 7 }) + faker.string.symbol(),
     firstName: faker.person.firstName(),
