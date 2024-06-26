@@ -8,12 +8,14 @@ export class LoginPage extends BasePage {
   readonly emailInput: Locator;
   readonly passwordInput: Locator;
   readonly loginSignInButton: Locator;
+  readonly myAccountLabel: Locator;
 
   constructor(page: Page) {
     super(page);
     this.emailInput = page.getByLabel('Email', { exact: true });
     this.passwordInput = page.getByLabel('Password', { exact: true }).first();
     this.loginSignInButton = page.getByRole('button', { name: 'Sign In' });
+    this.myAccountLabel = page.getByRole('heading', { name: 'My Account' });
   }
 
   async enterCredentials(user: User) {
@@ -26,7 +28,11 @@ export class LoginPage extends BasePage {
   }
 
   async verifyIfLoggedIn() {
-    await expect(this.page).toHaveURL(urls.baseUrl);
+    if (await this.myAccountLabel.isVisible()) {
+      await expect(this.page).toHaveURL(urls.loginUrl);
+    } else {
+      await expect(this.page).toHaveURL(urls.baseUrl);
+    }
     await expect(this.page.getByRole('banner').getByText('Welcome, ' + user.validUser.firstName)).toBeVisible();
   }
 }
