@@ -10,6 +10,7 @@ test.describe('Login page test', () => {
     await topbar.clickLoginLink();
     await loginPage.enterCredentials(user.validUser);
     await loginPage.clickSignInButton();
+    await topbar.clickActionMenuOption('My account');
     await loginPage.verifyIfLoggedIn();
   });
 });

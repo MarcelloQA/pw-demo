@@ -28,11 +28,7 @@ export class LoginPage extends BasePage {
   }
 
   async verifyIfLoggedIn() {
-    if (await this.myAccountLabel.isVisible()) {
-      await expect(this.page).toHaveURL(urls.loginUrl);
-    } else {
-      await expect(this.page).toHaveURL(urls.baseUrl);
-    }
+    await expect(this.myAccountLabel).toBeVisible();
     await expect(this.page.getByRole('banner').getByText('Welcome, ' + user.validUser.firstName)).toBeVisible();
   }
 }

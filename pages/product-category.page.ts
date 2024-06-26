@@ -29,7 +29,7 @@ export class ProductCategoryPage extends BasePage {
 
   async addSingleProductToCart({ name }: Product) {
     await this.productItem.filter({ hasText: name }).hover();
-    await this.addToCartButton.click();
+    await this.addToCartButton.first().click();
   }
 
   async addToCart(products: Product[]) {

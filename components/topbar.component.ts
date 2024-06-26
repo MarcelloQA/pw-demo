@@ -40,7 +40,7 @@ export class Topbar extends BasePage {
   }
 
   async clickActionMenuOption(optionName: string) {
-    await expect(this.welcomeBanner).toBeVisible();
+    await expect.soft(this.welcomeBanner).toBeVisible();
     await this.accountActionMenuButton.click();
     await this.page.getByRole('link', { name: optionName }).click();
   }
