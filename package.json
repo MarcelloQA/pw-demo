@@ -1,7 +1,10 @@
 {
   "name": "pw-demo",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test",
+    "test-ui": "npx playwright test --ui"
+  },
   "author": "Marcel",
   "license": "ISC",
   "devDependencies": {

@@ -5,7 +5,14 @@
     "baseUrl": "./",
     "moduleResolution": "node",
     "types": ["node"],
-    "lib": ["ES2020", "dom"]
+    "lib": ["ES2020", "dom"],
+    "paths": {
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@fixtures": ["fixtures/fixtures"],
+      "@interfaces/*": ["interfaces/*"],
+      "@data/*": ["data/*"]
+    }
   },
   "include": ["**/*.ts"]
 }

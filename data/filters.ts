@@ -1,4 +1,4 @@
-import { Filter } from 'interfaces/filter';
+import { Filter } from '@interfaces/filter';
 
 export const categoryFilter: {
   cardio: Filter;

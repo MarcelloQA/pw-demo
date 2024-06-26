@@ -1,4 +1,4 @@
-import { User } from 'interfaces/user';
+import { User } from '@interfaces/user';
 import { faker } from '@faker-js/faker';
 
 export const user: {
@@ -14,7 +14,7 @@ export const user: {
   },
   registerInvalidUser: {
     email: faker.internet.email({
-      provider: 'coffeedemo1234.test',
+      provider: 'coffeedemo12345.test',
     }),
     password: faker.internet.password({ length: 7 }),
     firstName: faker.person.firstName(),
@@ -22,7 +22,7 @@ export const user: {
   },
   registerValidUser: {
     email: faker.internet.email({
-      provider: 'coffeedemo1234.test',
+      provider: 'coffeedemo12345.test',
     }),
     password: faker.internet.password({ length: 7 }) + faker.string.symbol(),
     firstName: faker.person.firstName(),

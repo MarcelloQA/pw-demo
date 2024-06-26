@@ -1,9 +1,9 @@
-import { LoginPage } from 'pages/login.page';
-import { RegisterPage } from 'pages/register.page';
-import { ProductCategoryPage } from 'pages/product-category.page';
-import { CartPage } from 'pages/shopping-cart.page';
-import { Topbar } from 'components/topbar.component';
-import { Navbar } from 'components/navbar.component';
+import { LoginPage } from '@pages/login.page';
+import { RegisterPage } from '@pages/register.page';
+import { ProductCategoryPage } from '@pages/product-category.page';
+import { CartPage } from '@pages/shopping-cart.page';
+import { Topbar } from '@components/topbar.component';
+import { Navbar } from '@components/navbar.component';
 import { test as base } from '@playwright/test';
 
 type Fixtures = {

@@ -1,7 +1,7 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { BasePage } from './base.abstract';
-import { Filter } from 'interfaces/filter';
-import { Product } from 'interfaces/products';
+import { BasePage } from '@pages/base.abstract';
+import { Filter } from '@interfaces/filter';
+import { Product } from '@interfaces/products';
 
 export class ProductCategoryPage extends BasePage {
   readonly categoryFilterList: Locator;

@@ -1,5 +1,5 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { BasePage } from './base.abstract';
+import { BasePage } from '@pages/base.abstract';
 
 export class CartPage extends BasePage {
   readonly shoppingCartLabel: Locator;

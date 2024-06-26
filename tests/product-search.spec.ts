@@ -1,7 +1,7 @@
-import { test } from 'fixtures/fixtures';
-import { category } from 'data/categories';
-import { activityFilter, categoryFilter } from 'data/filters';
-import { athleticProducts } from 'data/athleticProducts';
+import { test } from '@fixtures';
+import { category } from '@data/categories';
+import { activityFilter, categoryFilter } from '@data/filters';
+import { athleticProducts } from '@data/athleticProducts';
 
 test.describe('Product search test', () => {
   test.beforeEach(async ({ navbar }) => {

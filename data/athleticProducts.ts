@@ -1,4 +1,4 @@
-import { Product } from 'interfaces/products';
+import { Product } from '@interfaces/products';
 
 export const pushUpGrips: Product = {
   name: "Go-Get'r Pushup Grips",

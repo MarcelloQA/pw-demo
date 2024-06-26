@@ -1,5 +1,5 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { urls } from 'data/urls';
+import { urls } from '@data/urls';
 
 export abstract class BasePage {
   readonly page: Page;

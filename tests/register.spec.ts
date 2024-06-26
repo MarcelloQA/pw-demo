@@ -1,5 +1,5 @@
-import { test } from 'fixtures/fixtures';
-import { user } from 'data/users';
+import { test } from '@fixtures';
+import { user } from '@data/users';
 
 test.describe('Register page test', () => {
   test.beforeEach(async ({ navbar }) => {

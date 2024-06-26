@@ -1,6 +1,6 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { Category } from 'interfaces/category';
-import { BasePage } from 'pages/base.abstract';
+import { Category } from '@interfaces/category';
+import { BasePage } from '@pages/base.abstract';
 
 export class Navbar extends BasePage {
   readonly whatsNewButton: Locator;

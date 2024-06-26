@@ -1,7 +1,7 @@
-import { User } from 'interfaces/user';
+import { User } from '@interfaces/user';
 import { expect, Locator, Page } from '@playwright/test';
-import { urls } from 'data/urls';
-import { BasePage } from './base.abstract';
+import { urls } from '@data/urls';
+import { BasePage } from '@pages/base.abstract';
 
 export class RegisterPage extends BasePage {
   readonly firstNameInput: Locator;

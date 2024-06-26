@@ -1,8 +1,8 @@
 import { Locator, Page, expect } from '@playwright/test';
-import { BasePage } from './base.abstract';
-import { User } from 'interfaces/user';
-import { urls } from 'data/urls';
-import { user } from 'data/users';
+import { BasePage } from '@pages/base.abstract';
+import { User } from '@interfaces/user';
+import { urls } from '@data/urls';
+import { user } from '@data/users';
 
 export class LoginPage extends BasePage {
   readonly emailInput: Locator;
